@@ -1,0 +1,248 @@
+@font-face {
+    font-family: 'cyber';
+    src: url('../fonts/Techovier\ .ttf'),
+    url('../fonts/Techovier\ .otf');
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "cyber", sans-serif;  
+    color:#000000; 
+    text-shadow: 0 0 5px rgba(255, 42, 109, 0.8),  /* Primeira camada de brilho */
+                 0 0 10px rgba(255, 42, 109, 0.6), /* Segunda camada de brilho */
+                 0 0 15px rgba(255, 42, 109, 0.4); /* Terceira camada de brilho */
+    margin: 0 auto;
+    max-width: 1120px;
+    background: linear-gradient(111deg, rgba(255,42,109,1) 9%, rgba(5,212,232,1) 45%, rgba(203,29,205,1) 64%);
+    z-index:-2
+}
+
+
+body::after {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('../imagens/fundo-cyberpunk.png') no-repeat center center fixed;
+    background-size: cover;
+    z-index: -1;
+    opacity: 1.1; 
+}
+.cabecalho {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px 15px;
+}
+
+.cabecalho .logo {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    border: 2px solid #FDF500;
+    align-items: center;
+    transition: 0.2s;
+}
+
+.cabecalho a:hover .logo {
+    background-color: #05d4e8;
+    transform: scale(1.2);
+}
+
+.cabecalho .menu li a {
+    color: #05d4e8;
+    font-size: 20px;
+    text-transform: capitalize;
+    padding: 10px 20px;
+    transition: 0.2s;
+}
+
+.cabecalho .menu li a:hover {
+    background-color: #ff2a6d;
+    color: #FDF500;
+    border-radius: 50px;
+}
+
+.home {
+    display: flex;
+    min-height: calc(100vh - 125px);
+    align-items: center;
+    gap: 50px;
+    justify-content: space-between;
+}
+
+.home .informacoes {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    letter-spacing: 2px;
+    padding: 0 15px;
+    max-width: 50%;
+}
+
+.home.informacoes h1 {
+    font-family: "Raleway" sans-serif;
+    font-size: 45px;
+    margin-bottom: 20px;
+}
+
+.home .informacoes p {
+    font-family: "Raleway" sans-serif;
+    font-size: 25px;
+    font-weight: 100;
+    margin-bottom: 10px;
+    text-transform: capitalize;
+}
+
+.home .redes-sociais {
+    display: flex;
+    gap: 20px;
+}
+
+.home .redes-sociais a i {
+    color: #7a04eb;
+    border: 2px solid #FDF500;
+    border-radius: 40%;
+    width: 60px;
+    height: 60px;
+    padding: 10px;
+    text-align: center;
+    font-size: 40px;
+    margin: 0 auto;
+    transition: 0.3s;
+}
+
+.home .redes-sociais a i:hover {
+    color: #FDF500;
+    border: 2px solid #7a04eb;
+    transform: scale(1.2);
+}
+
+.home .container-foto .foto {
+    max-width: 450px;
+    border-radius: 50%;  
+}
+
+.home .container-foto img {
+    width: 100%;
+    border-radius: 50%;
+    box-shadow: 0 0 20px rgba(23, 139, 255, 0.8), 
+                0 0 40px rgba(157, 203, 248, 0.6), 
+                0 0 60px rgba(209, 232, 255, 0.4); 
+}
+
+.home .foto.sombra-interna {
+    background: linear-gradient(111deg, rgba(255,42,109,1) 23%, rgba(5,212,232,1) 68%);
+    background-size: 180% 180%;
+    animation: gradiente-animation 5s ease infinite;
+}
+
+.projetos {
+    padding: 70px 0;
+}
+
+.projetos .titulo {
+    text-align: center;
+    color:#ff2a6d;
+    padding: 60px 0;
+    font-size: 45px;
+    font-weight: 500;
+    text-transform: uppercase;
+}
+
+
+.projetos .container-projetos {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+    justify-content: center;
+}
+
+.projetos .projeto {
+    max-width: 260px;
+    max-height: 500px;
+    position: relative;
+    display: none;
+}
+
+.projetos .projeto.ativo {
+    display: block;
+}
+
+.projetos .projeto img {
+    height: 100%;
+}
+
+.projetos .projeto h3 {
+    background-color: #ff2a6d;
+    color: #7a04eb;
+    width: 100%;
+    padding-left: 20px;
+    padding-bottom: 10px;
+    padding-top: 10px;
+    position: absolute;
+    bottom: 0;
+}
+
+.projetos .projeto .informacoes-projeto {
+    background-color: #040203;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    font-weight: 600;
+    opacity: 0;
+    transition: 0.3s;
+    padding: 20px;
+}
+
+.projetos .container-projetos .projeto:hover .informacoes-projeto {
+    opacity: 0.7;
+    background-color: #000;
+}
+
+.projetos .btn-mostrar-projetos {
+    background: none;
+    border: 2px solid #FDF500;
+    border-radius: 15px;
+    color: #FDF500;
+    width: 180px;
+    padding: 20px;
+    font-size: 18px;
+    font-weight: 600;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.projetos .btn-mostrar-projetos:hover {
+    background-color: #05d4e8;
+    color: #ff2a6d;
+    transition: 0.3s;
+}
+
+.projetos .btn-mostrar-projetos.remover {
+    display: none;
+}
+
+@keyframes gradiente-animation {
+    0% {
+        background-position: 0% 10%;
+    }
+
+    50% {
+        background-position: 100% 20%;
+    }
+
+    100% {
+        background-position: 0% 10%;
+    }
+}
