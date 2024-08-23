@@ -22,6 +22,12 @@
         padding: 0 30px;
     }
 
+    body::after{
+        background-attachment: scroll; 
+        background-size: cover; /* Mantém a imagem coberta na tela */
+        background-position: center;
+    }
+
 }
 
 @media(max-width:425px){
@@ -39,6 +45,12 @@
 
     .projetos {
         padding: 30px;
+    }
+
+    body::after{
+        background-attachment: scroll; 
+        background-size: cover; /* Mantém a imagem coberta na tela */
+        background-position: center;
     }
 
 
